@@ -1,14 +1,22 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace Applitools
 {
-    [TestClass]
-    public class UnitTest1
+    [TestFixture]
+    [Category("Examples of different baselines")]
+    public class BaselinesExamples : BaseClass
     {
-        [TestMethod]
-        public void TestMethod1()
+        private const string AppName = "sample app 1";
+
+        public string TestCaseName => "Test1";
+
+        [Test]
+        public void SetBaselineUsingAppName()
         {
+            GoToPricingPage();
+            Eyes.Open(Driver, AppName, TestCaseName, Resolution1080p);
         }
     }
 }
