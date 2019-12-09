@@ -14,7 +14,15 @@ namespace Applitools
         public void SetBaselineUsingAppName()
         {
             GoToPricingPage();
-            Eyes.Open(Driver, AppName, TestCaseName, Resolution1080p);
+            Eyes.Open(Driver, AppName, TestCaseName, ResolutionCustom1366);
+        }
+
+        [Test]
+        public void SetBaselineUsingDifferentAppName()
+        {
+            GoToPricingPage();
+            Eyes.Open(Driver, "app 2", TestCaseName, ResolutionCustom1366);
+            Eyes.CheckWindow();
         }
     }
 }

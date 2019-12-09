@@ -13,7 +13,7 @@ namespace Applitools
 
         public Eyes Eyes { get; set; }
 
-        public Size Resolution720p => new Size(1280, 720);
+        public Size ResolutionCustom1366 => new Size(1366, 625);
 
         public Size Resolution1080p => new Size(1311, 969);
 
