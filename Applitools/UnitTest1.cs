@@ -24,5 +24,27 @@ namespace Applitools
             Eyes.Open(Driver, "app 2", TestCaseName, ResolutionCustom1366);
             Eyes.CheckWindow();
         }
+
+        [Test]
+        public void SetBaselineUsingViewportSize()
+        {
+            GoToPricingPage();
+            Eyes.Open(Driver, AppName, TestCaseName, Resolution1080p);
+            Eyes.CheckWindow();
+        }
+
+        [Test]
+        public void TestBaseline()
+        {
+            GoToPricingPage();
+            UpdateElements();
+            Eyes.Open(Driver, AppName, TestCaseName, ResolutionCustom1366);
+            Eyes.CheckWindow();
+        }
+
+        private void UpdateElements()
+        {
+
+        }
     }
 }
